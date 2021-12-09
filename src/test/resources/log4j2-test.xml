@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Appenders>
+        <Loghub name="Loghub"
+                topicId="${topicId}"
+                endpoint="ap-guangzhou.cls.tencentcs.com"
+                accessKeyId="${accessKeyId}"
+                accessKeySecret="${accessKeySecret}"
+                totalSizeInBytes="104857600"
+                maxBlockMs="0"
+                sendThreadCount="8"
+                batchSizeThresholdInBytes="524288"
+                batchCountThreshold="4096"
+                lingerMs="2000"
+                retries="10"
+                baseRetryBackoffMs="100"
+                maxRetryBackoffMs="100"
+                source=""
+                timeFormat="yyyy-MM-dd'T'HH:mmZ"
+                timeZone="UTC"
+                ignoreExceptions="true"
+                mdcFields="THREAD_ID1">
+            <PatternLayout
+                    pattern="%d{HH:mm:ss.SSS} %-5level %class{36} %L %M - %msg%xEx"/>
+        </Loghub>
+    </Appenders>
+    <Loggers>
+        <Root level="warn">
+            <AppenderRef ref="Loghub"/>
+        </Root>
+    </Loggers>
+</Configuration>
