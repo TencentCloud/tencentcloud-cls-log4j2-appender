@@ -142,10 +142,15 @@ public class LoghubAppender extends AbstractAppender {
             source = event.getSource();
             event.setIncludeLocation(false);
         }
-
         item.PushBack("location", source == null ? "Unknown(Unknown Source)" : source.toString());
 
         String message = event.getMessage().getFormattedMessage();
+        if (message.length() > 1024*1024) {
+            this.error("Failed to send log, message content exceed 1M, topicId=" + topicId
+                    + ", source=" + source
+                    + ", logItem=" + item, new Exception("message content exceed 1M"));
+            return;
+        }
         item.PushBack("message", message);
 
         String throwable = getThrowableStr(event.getThrown());
@@ -154,7 +159,14 @@ public class LoghubAppender extends AbstractAppender {
         }
 
         if (getLayout() != null) {
-            item.PushBack("log", new String(getLayout().toByteArray(event)));
+            String logItem =  new String(getLayout().toByteArray(event));
+            if (logItem.length() > 1024*1024) {
+                this.error("Failed to send log, log content exceed 1M, topicId=" + topicId
+                        + ", source=" + source
+                        + ", logItem=" + item, new Exception("log content exceed 1M"));
+                return;
+            }
+            item.PushBack("log", logItem);
         }
 
         Optional.ofNullable(mdcFields).ifPresent(f->event.getContextMap().entrySet().stream()

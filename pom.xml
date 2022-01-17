@@ -6,7 +6,7 @@
 
   <groupId>com.tencentcloudapi.cls</groupId>
   <artifactId>tencentcloud-cls-log4j2-appender</artifactId>
-  <version>1.0.2</version>
+  <version>1.0.3</version>
 
   <name>tencentcloud-cls-log4j2-appender</name>
   <!-- FIXME change it to the project's website -->
