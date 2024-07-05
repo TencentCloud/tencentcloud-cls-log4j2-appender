@@ -1,4 +1,4 @@
-Tencent CLS Log4j Appender SDK 
+Tencent CLS Log4j2 Appender SDK 
 ---
 
 ### Log4j简介 - "来自百度百科"
@@ -14,9 +14,9 @@ Log4j 由三个重要的组件构成：
 - 日志信息的输出格式  
 而输出格式则控制了日志信息的显示内容
 
-### 使用 Tencent CLS Log4j Appender
+### 使用 Tencent CLS Log4j2 Appender
 
-通Tencent CLS Log4j Appender，您可以控制日志的输出目的地为腾讯云日志服务。
+通Tencent CLS Log4j2 Appender，您可以控制日志的输出目的地为腾讯云日志服务。
 写到日志服务中的日志的样式如下：
 
 ![demo](./demo.png)
