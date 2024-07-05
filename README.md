@@ -19,7 +19,7 @@ Log4j 由三个重要的组件构成：
 通Tencent CLS Log4j2 Appender，您可以控制日志的输出目的地为腾讯云日志服务。
 写到日志服务中的日志的样式如下：
 
-![demo](./demo.png)
+![demo](https://github.com/TencentCloud/tencentcloud-cls-log4j-appender/blob/main/demo.png)
 
 |  字段   | 简介  |
 | :----:   |:----:   |
