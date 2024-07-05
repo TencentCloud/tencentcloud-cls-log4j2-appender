@@ -40,7 +40,7 @@ Log4j 由三个重要的组件构成：
 <dependency>
     <groupId>com.tencentcloudapi.cls</groupId>
     <artifactId>tencentcloud-cls-log4j2-appender</artifactId>
-    <version>1.0.3</version>
+    <version>1.0.4</version>
 </dependency>
 ```
 
